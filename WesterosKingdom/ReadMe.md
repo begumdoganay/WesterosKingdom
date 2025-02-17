@@ -93,7 +93,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICEN
 
 Ad Soyad - begum.doganay@icloud.com
 
-Proje Linki: [https://github.com/begumdoganay/westeros-kingdom](https://github.com/begumdoganay/westeros-kingdom)
+Proje Linki: [https://github.com/begumdoganay/westeros-kingdom](https://github.com/begumdoganay/WesterosKingdom)
 
 ## Teşekkürler
 
