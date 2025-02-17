@@ -2,8 +2,8 @@
 
 Game of Thrones temalı, çok dilli bir giriş ekranı deneyimi. Kullanıcılar kendi isimlerini girerek krallığa giriş yapabilir, farklı dillerde içerikleri görüntüleyebilir ve Game of Thrones tema müziği eşliğinde benzersiz bir deneyim yaşayabilirler.
 
-![Westeros Krallığı](screenshot.png) 
-![Westeros Krallığı](screenshot2.png)
+![Westeros Krallığı](screenshot2.png) 
+![Westeros Krallığı](screenshot.png)
 ## Özellikler
 
 - 🌍 Çoklu dil desteği (Türkçe, İngilizce, Almanca)
