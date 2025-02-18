@@ -82,6 +82,86 @@
             backdrop-filter: blur(10px);
         }
 
+        .controls {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(30, 41, 59, 0.85);
+            padding: 0.8rem;
+            border-radius: 15px;
+            border: 2px solid var(--text-primary);
+            box-shadow: 0 4px 20px rgba(144, 205, 244, 0.2);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .controls:hover {
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 6px 25px rgba(144, 205, 244, 0.3);
+        }
+
+        .control-button {
+            background: var(--text-primary);
+            border: none;
+            color: var(--primary-bg);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .control-button:hover {
+            transform: translateY(-2px);
+            background: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(144, 205, 244, 0.4);
+        }
+
+        .control-button i {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+        }
+
+        .volume-slider {
+            width: 0;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(144, 205, 244, 0.2);
+            border-radius: 4px;
+            outline: none;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .controls:hover .volume-slider {
+            width: 100px;
+            opacity: 1;
+            margin-right: 8px;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+            background: var(--accent-color);
+            transform: scale(1.2);
+        }
+
         .lang-button {
             background: transparent;
             border: 2px solid transparent;
@@ -339,6 +419,14 @@
         <button class="lang-button active" data-lang="tr">TR</button>
         <button class="lang-button" data-lang="en">EN</button>
         <button class="lang-button" data-lang="de">DE</button>
+    </div>
+
+    <div class="controls">
+        <button class="control-button" id="audioToggle" title="Müzik">
+            <i data-lucide="volume-2" size="24"></i>
+        </button>
+        <input type="range" id="volumeSlider" min="0" max="100" value="10" 
+               class="volume-slider">
     </div>
 
     <div class="main-container">
