@@ -166,6 +166,24 @@
             font-size: 1.5rem;
             color: var(--text-secondary);
         }
+        .volume-slider {
+            display: none;
+            width: 100px;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(45, 55, 72, 0.7);
+            -webkit-appearance: none;
+             margin: 10px;
+       }
+
+       .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            cursor: pointer;
+        }
 
         .welcome-title {
             font-size: 2.5rem;
