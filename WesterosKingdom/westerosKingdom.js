@@ -124,26 +124,12 @@ class WesterosExperience {
     }
 
     setupAudio() {
-    if (!this.audio) {
-        this.audio = new Audio('got-theme.mp3');
-        this.audio.loop = true;
-        // Başlangıç ses seviyesini düşük ayarla (0.1 = %10 ses)
-        this.audio.volume = 0.1;
-        
-        
-        // Volume slider kontrolü
-        const volumeSlider = document.getElementById('volumeSlider');
-        if (volumeSlider) {
-            // Slider'ı başlangıç ses seviyesine ayarla
-            volumeSlider.value = this.audio.volume * 100;
-            
-            // Slider değiştiğinde sesi güncelle
-            volumeSlider.addEventListener('input', (e) => {
-                this.audio.volume = e.target.value / 100;
-            });
+        if (!this.audio) {
+            this.audio = new Audio('got-theme.mp3');
+            this.audio.loop = true;
+            this.audio.volume = this.volumeSlider ? (this.volumeSlider.value / 100) : 0.5;
         }
     }
-}
 
     toggleAudio() {
         this.audioEnabled = !this.audioEnabled;
