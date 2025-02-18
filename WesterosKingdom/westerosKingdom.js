@@ -28,12 +28,12 @@ class WesterosExperience {
                 welcome: "Welcome",
                 leaveButton: "Leave the Realm",
                 quotes: [
-                    "Wınter ıs comıng, and the dead come wıth ıt...",
-                    "Seven Kıngdoms unıted under one sword.",
-                    "In the game of thrones, you wın or you dıe.",
-                    "The dance of dragons begıns..."
+                    "Winter is coming, and the dead come with it...",
+                    "Seven Kingdoms united under one sword.",
+                    "In the game of thrones, you win or you die.",
+                    "The dance of dragons begins..."
                 ],
-                regions: ['⚔️ Wınterfell', '🏰 Kıng\'s Landıng', '🗡️ Casterly Rock', '🏹 The Eyrıe'],
+                regions: ['⚔️ Winterfell', '🏰 King\'s Landing', '🗡️ Casterly Rock', '🏹 The Eyrie'],
                 days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             },
             de: {
@@ -41,15 +41,15 @@ class WesterosExperience {
                 subtitle: "Tore der Sieben Königreiche",
                 placeholder: "Geben Sie Ihren edlen Namen ein, Lady/Lord",
                 enterButton: "Betreten Sie das Reich",
-                welcome: "Wıllkommen",
+                welcome: "Willkommen",
                 leaveButton: "Verlassen Sie das Reich",
                 quotes: [
-                    "Der Wınter naht, und die Toten kommen mıt ıhm...",
-                    "Sıeben Könıgreıche vereınt unter einem Schwert.",
-                    "Im Spiel der Throne gewınnst du oder stırbst.",
-                    "Der Tanz der Drachen begınnt..."
+                    "Der Winter naht, und die Toten kommen mit ihm...",
+                    "Sieben Königreiche vereint unter einem Schwert.",
+                    "Im Spiel der Throne gewinnst du oder stirbst.",
+                    "Der Tanz der Drachen beginnt..."
                 ],
-                regions: ['⚔️ Wınterfell', '🏰 Könıgsmund', '🗡️ Casterlystein', '🏹 Hohenehr'],
+                regions: ['⚔️ Winterfell', '🏰 Königsmund', '🗡️ Casterlystein', '🏹 Hohenehr'],
                 days: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag']
             }
         };
@@ -103,9 +103,6 @@ class WesterosExperience {
         const audioToggle = document.getElementById('audioToggle');
         if (audioToggle) {
             audioToggle.addEventListener('click', () => this.toggleAudio());
-            audioToggle.addEventListener('mouseover', () => {
-                if (this.volumeSlider) this.volumeSlider.style.display = 'block';
-            });
         }
 
         if (this.volumeSlider) {
@@ -115,19 +112,17 @@ class WesterosExperience {
                 }
             });
         }
-
-        document.addEventListener('click', (e) => {
-            if (this.volumeSlider && !e.target.matches('#audioToggle, #volumeSlider')) {
-                this.volumeSlider.style.display = 'none';
-            }
-        });
     }
 
     setupAudio() {
         if (!this.audio) {
             this.audio = new Audio('got-theme.mp3');
             this.audio.loop = true;
-            this.audio.volume = this.volumeSlider ? (this.volumeSlider.value / 100) : 0.5;
+            this.audio.volume = 0.1; // Başlangıç ses seviyesi %10
+            
+            if (this.volumeSlider) {
+                this.volumeSlider.value = this.audio.volume * 100;
+            }
         }
     }
 
